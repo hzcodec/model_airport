@@ -1,0 +1,86 @@
+tis 20 nov 2018 23:30:41 CET
+
+Flash binary:
+
+python3 esptool.py --port /dev/ttyUSB0 write_flash -fm dio 0x00000 ../../bin/nodemcu-master-11-modules-2018-11-20-18-34-23-integer.bin 
+
+  esptool.py v2.6-beta1
+  Serial port /dev/ttyUSB0
+  Connecting....
+  Detecting chip type... ESP8266
+  Chip is ESP8266EX
+  Features: WiFi
+  MAC: 80:7d:3a:74:f6:cf
+  Uploading stub...
+  Running stub...
+  Stub running...
+  Configuring flash size...
+  Auto-detected Flash size: 4MB
+  Flash params set to 0x0240
+  Compressed 442368 bytes to 289320...
+  Wrote 442368 bytes (289320 compressed) at 0x00000000 in 25.5 seconds (effective 138.6 kbit/s)...
+  Hash of data verified.
+  
+  Leaving...
+  Hard resetting via RTS pin...
+
+
+----------------------------------------------------------------
+
+ons 21 nov 2018 22:49:26 CET
+
+Download ESPlorer
+  http://esp8266.ru/esplorer/#download
+
+Run java file:
+  $ java -jar ESPlorer.jar
+
+----------------------------------------------------------------
+
+lör 24 nov 2018 18:37:08 CET
+
+Run lua-script:
+/home/heinz/LoLin/nodemcutool/NodeMCU-Tool
+
+$ ./nodemcu-tool run helloworld.lua 
+
+$ ./nodemcu-tool --connection-delay 50 upload --port=/dev/ttyUSB0 ~/lua/blink_led/blink_led.lua
+
+
+$ ./nodemcu-tool --connection-delay 50 upload --port=/dev/ttyUSB0 ~/lua/pwm/pwm1.lua
+
+
+----------------------------------------------------------------
+
+lör 12 jan 2019 21:29:35 CET
+
+/home/heinz/LoLin/python/esptool
+
+python3 esptool.py --port /dev/ttyUSB0 write_flash -fm dio 0x00000 ../../bin/nodemcu-master-11-modules-2018-11-20-18-34-23-integer.bin 
+
+
+/home/heinz/LoLin/nodemcutool/NodeMCU-Tool
+
+$ ./nodemcu-tool --connection-delay 50 upload --port=/dev/ttyUSB0 ~/lua/blink_led/blink_led.lua
+
+python3 esptool.py --port /dev/ttyUSB0 --baud 9600 erase_flash
+
+
+----------------------------------------------------------------
+
+sön  3 feb 2019 18:54:53 CET
+
+/home/heinz/LoLin/python/esptool
+python3 esptool.py --port /dev/ttyUSB0 write_flash -fm dio 0x00000 ../../bin/nodemcu-master-11-modules-2018-11-20-18-34-23-integer.bin 
+
+
+/home/heinz/LoLin/nodemcutool/NodeMCU-Tool
+./nodemcu-tool --connection-delay 50 upload --port=/dev/ttyUSB0 ~/lua/blink_led/blink_led.lua
+
+
+$ ./nodemcu-tool run blink_led.lua 
+
+Launch PuTTY.
+
+----------------------------------------------------------------
+
