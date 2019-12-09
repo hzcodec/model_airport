@@ -63,10 +63,10 @@ module base_plate_with_holes() {
     translate([0, 115, -14]) cylinder(d=3, h=26);
 
     // switch hole
-    translate([-40, 120, -14]) cylinder(d=6, h=26);
+    translate([40, 120, -14]) cylinder(d=6, h=26);
 
     // battery cable hole
-    translate([-40, 0, -14]) cylinder(d=6, h=26);
+    translate([40, 0, -14]) cylinder(d=6, h=26);
 
     // magnet holder holes
     translate([-15, 128, -14]) cylinder(d=4, h=26);
@@ -93,7 +93,7 @@ module base_plate_without_triangles() {
 }
 
 module rfid_hole() {
-     translate([30, 120, -15])
+     translate([-50, 120, -15])
      minkowski() {
        cube([20, 2, 5]);
        cylinder(r=1, h=5);
