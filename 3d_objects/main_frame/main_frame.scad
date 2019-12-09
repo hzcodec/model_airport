@@ -63,13 +63,18 @@ module base_plate_with_holes() {
     translate([0, 115, -14]) cylinder(d=3, h=26);
 
     // switch hole
-    translate([-40, 90, -14]) cylinder(d=6, h=26);
+    translate([-40, 120, -14]) cylinder(d=6, h=26);
+
+    // battery cable hole
+    translate([-40, 0, -14]) cylinder(d=6, h=26);
 
     // magnet holder holes
     translate([-15, 128, -14]) cylinder(d=4, h=26);
     translate([15, 128, -14]) cylinder(d=4, h=26);
 
     base_plate_without_triangles();
+
+    rfid_hole();
   }
 }
 
@@ -86,6 +91,14 @@ module base_plate_without_triangles() {
   base_plate_triangle();
   mirror_corners();
 }
+
+module rfid_hole() {
+     translate([30, 120, -15])
+     minkowski() {
+       cube([20, 2, 5]);
+       cylinder(r=1, h=5);
+     }
+} 
 // --------------------------------------------------------
 
 
@@ -115,6 +128,9 @@ module motor_support_with_hole() {
   difference() {
     motor_support();
     translate([0, 98, 0]) cylinder(d=2, h=4);
+    translate([0, 79, 0]) cylinder(d=2, h=4);
+    translate([8, 89, 0]) cylinder(d=2, h=4);
+    translate([-8, 89, 0]) cylinder(d=2, h=4);
   }
 }
 // --------------------------------------------------------
@@ -147,7 +163,7 @@ module fixed_2_supports() {
 
 
 //translate([0, -30, -10]) ruler(170);
-//translate([15, 28, -10]) ruler(112);
+//translate([35, 28, -10]) ruler(112);
 //translate([15, 50, -10]) rotate([90, 0, 0]) ruler(30);
 //translate([20, 120, -10]) rotate([0, 0, 90]) ruler(40);
 //translate([20, 110, -10]) rotate([0, 0, 90]) ruler(40);
