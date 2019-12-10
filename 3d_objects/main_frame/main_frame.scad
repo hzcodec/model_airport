@@ -5,7 +5,7 @@ $fn=60;
 
 frame_with_holes();
 base_plate_with_holes();
-triangle_support();
+//triangle_support();
 motor_support_with_hole();
 upper_support();
 
@@ -121,7 +121,7 @@ module triangle_support() {
 // build motor support
 module motor_support() {
   color([1, 0, 1])
-  translate([-15, 48, -10]) cube([30, 60, 13]);
+  translate([-13, 48, -10]) cube([26, 60, 13]);
 }
 
 module motor_support_with_hole() {
